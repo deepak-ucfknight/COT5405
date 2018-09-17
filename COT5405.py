@@ -13,7 +13,7 @@ class Programming_Assignment1:
         return random.randint(minbound, maxbound)
 
     def compute(self, sequence1, sequence2):
-        return sequence1 + sequence2
+        return sequence1 - sequence2
 
 
 TEST_CODE = '''
@@ -37,7 +37,7 @@ sequence_2 = object_Programming_Assignment1.generate_random()
 sequences = [4, 8, 16, 32, 64, 128, 256, 512]
 
 for sequence in sequences:
-    time = timeit.timeit(setup=SETUP_CODE.replace("***", str(sequence)), stmt=TEST_CODE, number=1000000)
+    time = timeit.timeit(setup=SETUP_CODE.replace("***", str(sequence)), stmt=TEST_CODE, number=1000)
     print("Compute time for sequence of size " + str(sequence) + " : " + str(time))
 
 

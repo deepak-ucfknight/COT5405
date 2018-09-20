@@ -34,10 +34,43 @@ sequence_2 = object_Programming_Assignment1.generate_random()
 
 '''
 
+# variables
+
 sequences = [4, 8, 16, 32, 64, 128, 256, 512]
 
+operations = []
+
+time = 0
+
+summation_time = 0
+
+averagetimer = []
+
+
+# Function to plot the performance
+
+# def graphplot(xaxis, yaxis, xlabel, ylabel, title):
+#     x = xaxis
+#     y = yaxis
+#     plt.plot(x, y)
+#     plt.xlabel(xlabel)
+#     plt.ylabel(ylabel)
+#     plt.title(title)
+#     plt.show()
+
+
+# Computing performance over 1000 iterations for 1000 random inputs of varied size of n
 for sequence in sequences:
-    time = timeit.timeit(setup=SETUP_CODE.replace("***", str(sequence)), stmt=TEST_CODE, number=1000)
+    for x in range(1000):
+        time = timeit.timeit(setup=SETUP_CODE.replace("***", str(sequence)), stmt=TEST_CODE, number=1000)
+        summation_time += time
+        operations.append(time)
+    #graphplot(range(1000), operations, 'Iterations', 'Time taken', 'Performance for sequence size ' + str(sequence) + ' over 1000 iterations')
+    averagetimer.append(summation_time / 1000)
+    summation_time - 0
+    operations.clear()
     print("Compute time for sequence of size " + str(sequence) + " : " + str(time))
 
+
+#graphplot(sequences, averagetimer, 'Sequence', 'Average Compute Time', 'Order of growth of runtimes as the input scales')
 

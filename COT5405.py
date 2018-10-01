@@ -1,7 +1,7 @@
 import random
 import timeit
 import matplotlib.pyplot as plt  # remove this header if matplot is not installed in the system
-from memory_profiler import profile  # remove this header if memory_profiler is not installed in the system
+# from memory_profiler import profile  # remove this header if memory_profiler is not installed in the system
 
 
 class Programming_Assignment1:

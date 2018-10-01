@@ -94,11 +94,11 @@ for sequence in sequences:
         individual_array.append(time)
 
     avg = summationtime / 1000
-    print("Compute time for sequence of size " + str(sequence) + " : " + str(avg))
+    print(" Average Compute time for sequence of size " + str(sequence) + " : " + str(avg))
     diff_time.append(abs(initialtime - avg))
     time_array.append(avg)
     initialtime = avg
-    graphplot(range(1000), individual_array, 'iterations', 'Time taken', 'Performance for sequence size ' + str(sequence) +' over million iterations')
+    graphplot(range(1000), individual_array, 'iterations', 'Time taken', 'Performance for sequence size ' + str(sequence) +' over 1000 iterations')
     individual_array.clear()
 
 
@@ -106,8 +106,8 @@ for sequence in sequences:
 for time in diff_time:
     print("Increase in growth rate between previous and current iteration : " + str(time))
 
-graphplot(sequences, time_array, 'Sequence size', 'Time taken', 'Performance for sequence size  over million iterations')
+graphplot(sequences, time_array, 'Sequence size', 'Time taken', 'Performance for sequence size  over 1000 iterations')
 
-graphplot(sequences, diff_time, 'Sequence size', 'Time taken', 'Differntiable Growth rate over million iterations')
+# graphplot(sequences, diff_time, 'Sequence size', 'Time taken', 'Differential Growth rate over 1000 iterations')
 
 

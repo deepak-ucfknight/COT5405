@@ -31,11 +31,11 @@ class Programming_Assignment1:
 
             inv_sequence1 = ~sequence1
 
-            borrow = (~inv_sequence1) & sequence2  # gather all the bits that are 1's since 1 + 1 will give a carry
+            borrow = inv_sequence1 & sequence2  # gather all the bits that are 1's since 1 + 1 will give a carry
 
             sequence1 = sequence1 ^ sequence2  # Sum of all bits except 1 + 1 since carry has that.
 
-            sequence2 = borrow << 1 # shifting carry
+            sequence2 = borrow << 1  # shifting carry
 
         return sequence1
 
